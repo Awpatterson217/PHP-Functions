@@ -33,3 +33,19 @@ function clean($array, $string){
     }
     return $array;
 }
+// Fixes a number to a certain number of decimal places
+function toFixed($number, $decimals) {
+    return number_format($number, $decimals, ".", "");
+}
+// Puts a number into money format
+function toMoney($val){
+    if($val >= 0){
+        $temp_val = number_format($val);
+        $formatted_number = "$".$temp_val;
+    }
+    if($val < 0){
+        $temp_val = number_format(abs($val));
+        $formatted_number = "-"."$".$temp_val;
+    }
+    return $formatted_number;
+}
